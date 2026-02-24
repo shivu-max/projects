@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2 class="mb-4">Add a New Blog Post</h2>
+
+<div class="card p-4 shadow-sm" style="max-width: 600px; margin:auto;">
+    <form method="POST" action="{{ url_for('add_post') }}">
+        <div class="mb-3">
+            <label for="title" class="form-label fw-bold">Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter blog title" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="content" class="form-label fw-bold">Content</label>
+            <textarea class="form-control" id="content" name="content" rows="6" placeholder="Write your blog here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success btn-publish">Publish Post</button>
+    </form>
+</div>
+{% endblock %}

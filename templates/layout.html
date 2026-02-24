@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }}{% else %}BlogBeam{% endif %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { margin: 0; }
+        .sidebar { min-height: calc(100vh - 70px); background-color: #f8f9fa; padding-top: 1rem; }
+        .content-area { padding: 2rem; }
+        .card { border-radius: 0.6rem; margin-bottom: 1.5rem; }
+        .avatar { border-radius: 50%; width: 50px; height: 50px; object-fit: cover; margin-right: 1rem; }
+        .username { font-size: 0.9rem; color: gray; }
+        .btn-publish { font-size: 1rem; padding: 0.6rem 1.4rem; }
+    </style>
+</head>
+<body>
+
+<!-- ===================== TOP HEADER ===================== -->
+<header class="p-3 bg-light border-bottom">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                <span class="fs-5 fw-bold"><t>B</t></span>
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                
+                
+                <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">help centre</a></li>
+            </ul>
+
+            <div class="text-end">
+                <button type="button" class="btn btn-outline-primary me-2">Login</button>
+                <button type="button" class="btn btn-primary">Sign-up</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ===================== MAIN BODY ===================== -->
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar flex-shrink-0" style="width: 220px;">
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="{{ url_for('home') }}" class="nav-link active">Home</a>
+            </li>
+            <li><a href="{{ url_for('add_post') }}" class="nav-link link-dark">Add Post</a></li>
+            <li><a href="#" class="nav-link link-dark">Account</a></li>
+            <li><a href="#" class="nav-link link-dark">Settings</a></li>
+            <li><a href="#" class="nav-link link-dark">contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="content-area flex-grow-1">
+        {% block content %}{% endblock %}
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
