@@ -68,7 +68,7 @@ blogbeam/
 
 ### 1️⃣ Clone the Repository
 
-git clone https://github.com/your-username/blogbeam.git  
+git clone https://github.com/shivu-max/blogbeam.git  
 cd blogbeam  
 
 ### 2️⃣ Create a Virtual Environment
